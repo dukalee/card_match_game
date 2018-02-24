@@ -228,6 +228,7 @@ class MatchGame:
                 self.show_player_deck()
             self.check_winner(self.players)                     #first check for winner
             self.com1.hands = self.reduce_cards(self.com1)      #reduce
+            random.shuffle(self.com1.hands)
             self.check_winner(self.players)                     #second check for winner
             time.sleep(1)
             print(""" 
@@ -265,6 +266,7 @@ class MatchGame:
                 self.show_player_deck()
             self.check_winner(self.players) 
             self.com2.hands = self.reduce_cards(self.com2)
+            random.shuffle(self.com2.hands)
             time.sleep(1)
             self.check_winner(self.players) 
             print(""" 
@@ -320,5 +322,6 @@ class MatchGame:
                 """)
             quit()
 
-game = MatchGame() 
-game.instructions()
+if __name __ == "__main__":
+    game = MatchGame() 
+    game.instructions()
